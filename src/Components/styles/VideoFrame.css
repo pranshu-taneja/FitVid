@@ -1,0 +1,30 @@
+.videoContainer {
+    width: 22rem;
+    height: 14rem;
+    border-radius: 1rem;
+    background: linear-gradient(#e66465, #9198e5);
+    margin: 1rem;
+    cursor: pointer;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    overflow: hidden;
+}
+
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.text{
+    text-wrap: wrap;
+}
+
+.helperText{
+    font-weight: bold;
+}

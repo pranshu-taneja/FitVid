@@ -1,0 +1,10 @@
+.singleTagContainer {
+    padding: 0.1rem 1rem;
+    border-radius: 2rem;
+    background-color: tomato;
+    margin: 0.4rem;
+}
+
+.singleTag {
+    font-size: 1rem;
+}
