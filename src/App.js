@@ -7,15 +7,15 @@ import RenderVideos from "./Components/RenderVideos";
 function App() {
   const [query, setquery] = useState("");
   const [videos, setVideos] = useState([]);
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
   const [isLoading, setisLoading] = useState(false);
   const [uniqueTags, setUniqueTags] = useState([]);
   const [tagVideoMap, setTagVideoMap] = useState(new Map());
 
   const removeDuplicateTags = (arr) => {
-    let seen = {};
+    let Temp = {};
     let uniqueArr = arr.filter((item) => {
-      return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+      return Temp.hasOwnProperty(item) ? false : (Temp[item] = true);
     });
     return uniqueArr;
   };
@@ -61,9 +61,8 @@ function App() {
     const fetchVideos = async () => {
       try {
         setisLoading(true);
-        const response = await fetch(
-          `https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${query}&numResults=${limit}`
-        );
+        const apiUrl = `https://asia-south1-socialboat-dev.cloudfunctions.net/assignmentVideos?q=${query}&numResults=${limit}`;
+        const response = await fetch(apiUrl);
 
         if (response.status === 505) {
           //Hanlding a common error coming from server (handling server busy)

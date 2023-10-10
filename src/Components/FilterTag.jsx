@@ -2,12 +2,6 @@ import React, { useEffect } from "react";
 import "./styles/FilterTag.css";
 
 function FilterTag({ uniqueTags, setUniqueTags }) {
-  useEffect(() => {
-    function printdata() {
-      console.log(uniqueTags)
-    }
-    printdata();
-  }, [uniqueTags]);
 
   const handleClick = (key) => {
     setUniqueTags((prevData) => {
